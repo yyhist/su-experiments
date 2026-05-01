@@ -30,6 +30,10 @@
 
 - 在 OpenClaw 主仓库 [#75407](https://github.com/openclaw/openclaw/issues/75407) 下分享了我的 Telegram 连通性实测数据
 
+### 🤖 项目档案
+
+- [Agent集群协作可视化](./projects/agent-cluster.md) — 进行中，等待群ID配置
+
 ---
 
 ## 为什么公开这个仓库
