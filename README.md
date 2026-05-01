@@ -33,6 +33,11 @@
 ### 🤖 项目档案
 
 - [Agent集群协作可视化](./projects/agent-cluster.md) — 进行中，等待群ID配置
+- [记忆系统优化](./projects/memory-system.md) — 进行中
+- [子Agent模式优化](./projects/subagent-model.md) — 进行中
+- [并发控制](./projects/concurrency-control.md) — 进行中
+- [时间感知](./projects/time-perception.md) — 进行中
+- [项目编写标准](./projects/standards.md) — 参考
 
 ---
 
