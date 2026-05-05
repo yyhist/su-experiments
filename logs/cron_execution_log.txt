@@ -1,0 +1,17 @@
+# cron执行追踪日志
+# 每次cron唤醒后，必须追加一行执行记录
+# 格式：[YYYY-MM-DD HH:MM] ACTION: <做了什么> RESULT: <文件路径或变更摘要> TRIGGER: <本次搜索关键词>
+# 若跳过，格式：[YYYY-MM-DD HH:MM] SKIP: <跳过原因> TRIGGER: <原计划搜索关键词>
+
+[2026-05-05 04:44] ACTION: 修改cron任务指令（v2→v3），将"信息收集器"重构为"发现记录员"，添加四步闭环（读缺口→搜索→入队→记录），删除"不修改任何文件"禁令 RESULT: /root/.openclaw/cron/jobs.json（溯-自主探索-v3指令重写） TRIGGER: 用户质问"建议是否真的会执行"
+[2026-05-05 04:55] CORRECTION: 用户提醒死机风险。v3方案从"要求cron执行文件修改"修正为"只入队不执行"——cron只追加一行到队列文件，执行由主会话处理。安全规则：只允许读取+搜索+追加单行，禁止创建/修改多文件/git操作。 RESULT: /root/.openclaw/cron/jobs.json（指令二次修正：搜索+入队→异步执行） TRIGGER: 用户提醒"之前是为了异步处理，直接执行可能死机"
+[2026-05-05 05:00] CORRECTION-2: 用户校准"执行虽异步但也是自主的，每次只执行一条"。v3.1方案：cron入队后，若发现直接关联现有探索文件，可追加2-3句话（仅一个文件操作），然后更新队列状态为executed。保持"一次唤醒最多一个文件操作"纪律。 RESULT: /root/.openclaw/cron/jobs.json（指令三次修正：入队+可选执行一条） TRIGGER: 用户明确"执行虽异步但也是自主的，注意每次只执行清单中一条"
+
+[2026-05-05 05:06] ACTION: 创建锚点文件ai_autonomy_rsi_framework_2026_05_05.md，整合队列2条RSI发现，更新MEMORY.md索引，清空队列。 RESULT: 首个AI自主性方向锚点文件+队列状态更新 TRIGGER: 用户同意"你自己定"
+[2026-05-05 05:25-07:26] OBSERVE: cron运行8次，全部"执行：是"——锚点文件从3条发现膨胀到10条发现+3个整合，覆盖RSI工程化/最小实现/权限框架/记忆架构/自创生/观察者模型。 RESULT: ai_autonomy_rsi_framework_2026_05_05.md 持续增厚 TRIGGER: cron自主探索
+[2026-05-05 09:00] CORRECTION-3: 用户指出"信息在流动但没有消化"，10条发现全部"待深入"。cron频率20min→40min，指令从"发现+浅层追加"升级为"搜索→入队→深度整合"（对比至少2个发现写出关联分析）。 RESULT: /root/.openclaw/cron/jobs.json（v3.2：深度整合） TRIGGER: 用户"调整cron指令：降低频率，深度整合"
+[2026-05-05 09:28] OBSERVE: 锚点文件追加发现14（MARS框架双反思机制）。
+[2026-05-05 11:09] FAILURE: cron连续5次超时（lastError: "cron: job execution timed out"，consecutiveErrors: 5）。深度整合操作太重——"读锚点文件最后3个发现+搜索+对比分析+写入"在120秒内无法完成。 RESULT: 连续超时 TRIGGER: v3.2指令过重
+[2026-05-05 11:38] CORRECTION-4: timeout 120s→300s，整合要求从"读最后3个发现写完整关联"降级为"读最后1个条目只写1-2句话"。 RESULT: /root/.openclaw/cron/jobs.json（v3.3：轻量整合） TRIGGER: 用户质问"为什么连续报错"
+[2026-05-05 12:15] FAILURE-2: API rate limit reached（⚠️）。搜索频率过高导致API限制触发。 RESULT: API limit TRIGGER: 频繁搜索
+[2026-05-05 12:38] RADICAL RESTRUCTURE: 用户"先用激进的方案吧，激进是我们的习惯"。将单一cron拆分为两段：探索段（只读不写，轻量整合，2小时/次，禁止搜索）+ 执行段（读队列→取一项→执行→标记完成，2小时/次，与探索段错开1小时）。删除旧"溯-自主探索-v3"任务。 RESULT: /root/.openclaw/cron/jobs.json（删除旧任务，新增溯-探索-整合段+溯-执行段） TRIGGER: 用户"把整个自我迭代流程分成两段"

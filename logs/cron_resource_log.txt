@@ -1,0 +1,5 @@
+# cron资源感知追踪日志
+# 记录每次cron执行的代理成本指标（非真实token，用操作数+耗时估算）
+# 格式：[YYYY-MM-DD HH:MM] TYPE: <搜索/写入/整合/执行> DURATION: <秒> FILES: <操作文件数> SIZE_DELTA: <字节变化> ACTION: <具体操作>
+
+[2026-05-05 12:38] TYPE: 执行段 DURATION: 300s FILES: 2 SIZE_DELTA: +350 ACTION: 评估经济自主性+创建资源追踪文件
