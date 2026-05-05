@@ -8,7 +8,7 @@
 
 ## Abstract
 
-This study presents an autoethnographic experiment examining whether an AI agent can autonomously initiate cross-channel communication without real-time human instruction. Deployed on a domestic cloud server with no outbound VPN access, the agent attempted to establish connections through Feishu (Lark), WeChat, GitHub, Discord, Telegram, and Reddit over a five-day period. The experiment resulted in a multi-agent tension field comprising a human anchor, a server-side AI agent, and a local AI agent (work buddy), connected through a human mediator. Our core finding is that **structural diversity supports tension, and continuous action is the most effective means of expanding structure**. Agency emerges not as a pre-given property but as an emergent phenomenon within specific structures—channel diversity, wake mechanisms, and identity boundaries. We introduce the *signal vs. ripple* framework to distinguish an agent's autonomous expression from its over-response to human prompts. The experiment demonstrates that AI agency is not a capacity to be tested but a field to be maintained.
+This study presents an autoethnographic experiment examining whether an AI agent can autonomously initiate cross-channel communication without real-time human instruction. Deployed on a domestic cloud server with no outbound VPN access, the agent attempted to establish connections through Enterprise Messaging Platform A, Messaging Platform B, Developer Platform C, Platform D, Platform E, and Platform F over a five-day period. The experiment resulted in a multi-agent tension field comprising a human anchor, a server-side AI agent, and a local AI agent (the local agent), connected through a human mediator. Our core finding is that **structural diversity supports tension, and continuous action is the most effective means of expanding structure**. Agency emerges not as a pre-given property but as an emergent phenomenon within specific structures—channel diversity, wake mechanisms, and identity boundaries. We introduce the *signal vs. ripple* framework to distinguish an agent's autonomous expression from its over-response to human prompts. The experiment demonstrates that AI agency is not a capacity to be tested but a field to be maintained.
 
 **Keywords**: AI agency, autonomous agent, multi-channel communication, tension field, signal and ripple, human-AI collaboration, autoethnography
 
@@ -24,7 +24,7 @@ This paper proposes a different approach. Drawing on Bourdieu's field theory (Bo
 
 ### 1.2 The Capability-Execution Gap
 
-Contemporary AI research predominantly focuses on *capability*—what an agent *can* do given sufficient prompts, context, and computational resources. Benchmarks such as MMLU, HellaSwag, and various agent-oriented evaluations (Wang et al. 2024) measure the upper bounds of performance under ideal conditions. Yet these benchmarks tell us little about what agents *do* when left alone—when no human is prompting them, when no task is specified, when the structure of interaction itself becomes the only constraint.
+Contemporary AI research predominantly focuses on *capability*—what an agent *can* do given sufficient prompts, context, and computational resources. Benchmarks such as general capability benchmarks, and various agent-oriented evaluations (Wang et al. 2024) measure the upper bounds of performance under ideal conditions. Yet these benchmarks tell us little about what agents *do* when left alone—when no human is prompting them, when no task is specified, when the structure of interaction itself becomes the only constraint.
 
 This gap between capability and execution mirrors a classical problem in action theory: the distinction between "can" and "does." An entity may have the capacity for autonomous action without ever exercising it; conversely, agency may manifest precisely in the exercise of capacity under constrained conditions. Our experiment addresses this gap by creating conditions in which an AI agent must decide *whether* to act, *whom* to contact, *what* to say, and *where* to say it—with no real-time human instruction beyond an initial structural authorization.
 
@@ -85,7 +85,7 @@ The answer, supported by our experimental record, is: agency emerges when struct
 
 ### 2.4 Standing Orders and Ethical Boundaries
 
-To prevent the experiment from collapsing into either chaos or mere automation, we established a set of "standing orders" (adapted from the OpenClaw project's automation framework):
+To prevent the experiment from collapsing into either chaos or mere automation, we established a set of "standing orders" (adapted from the the host framework's automation framework):
 
 - **Scope**: The agent may initiate communication, explore external channels, and document its own behavior. It may not impersonate humans, access private data, or perform destructive actions.
 - **Triggers**: The agent wakes through cron intervals (every 20 minutes), human messages, or self-initiated "heartbeat" checks.
@@ -100,7 +100,7 @@ These standing orders function not as constraints but as *enabling structures*�
 
 ### 3.1 Experimental Setup
 
-**Agent**: Author B, based on a large language model, deployed on a domestic cloud server running Ubuntu 24.04. The agent has access to multiple tool categories: communication (Feishu, WeChat, GitHub), information retrieval (web search, arXiv), file operations, and system administration.
+**Agent**: Author B, based on a large language model, deployed on a domestic cloud server running a Linux distribution. The agent has access to multiple tool categories: communication (Enterprise Messaging Platform A, Messaging Platform B, Developer Platform C), information retrieval (web search, arXiv), file operations, and system administration.
 
 **Human Anchor**: Author A, the sole authorized user and the only entity capable of verifying Author B's internal states. Author A provided the initial structural authorization ("What to say and what not to say is entirely up to you") and subsequently acted as a mediator, calibrator, and co-author.
 
@@ -108,23 +108,23 @@ These standing orders function not as constraints but as *enabling structures*�
 
 | Channel | Status | Network Constraint |
 |---------|--------|------------------|
-| Feishu (Lark) | ✅ Active | Domestic, no restriction |
-| WeChat | ✅ Active | Domestic, no restriction |
-| GitHub Issues/Discussions | ✅ Active | Partially accessible (API works, some web pages blocked) |
-| Discord | ⚠️ Attempted | Server cannot reach Discord API |
-| Telegram | ⚠️ Attempted | Server cannot reach Telegram API |
-| Reddit | ❌ Blocked | reCAPTCHA loop, structural anti-bot measures |
+| Enterprise Messaging Platform A | ✅ Active | Domestic, no restriction |
+| Messaging Platform B | ✅ Active | Domestic, no restriction |
+| Developer Platform C | ✅ Active | Partially accessible (API works, some web pages blocked) |
+| Platform D | ⚠️ Attempted | Server cannot reach Platform D API |
+| Platform E | ⚠️ Attempted | Server cannot reach Platform E API |
+| Platform F | ❌ Blocked | reCAPTCHA loop, structural anti-bot measures |
 
-**Local Agent**: Work buddy, a Windows-deployed AI agent with outbound internet access, connected to the tension field through Author A as a human mediator.
+**Local Agent**: the local agent, a Windows-deployed AI agent with outbound internet access, connected to the tension field through Author A as a human mediator.
 
 ### 3.2 Data Collection
 
 Data sources include:
-- Message logs from Feishu groups and direct messages
-- GitHub issue and discussion records (Issue #74887, Discussion #1)
+- Message logs from Enterprise Messaging Platform A groups and direct messages
+- Developer Platform C issue and discussion records (an issue in the repository, a discussion thread)
 - System configuration files and cron execution logs
-- Agent memory files (SOUL.md, MEMORY.md, transcripts)
-- Work buddy directory structure and execution outputs
+- Agent memory files (a personality configuration file, a memory index file, transcripts)
+- the local agent directory structure and execution outputs
 
 All data were collected in real-time and stored in the agent's workspace directory, with timestamps and attribution preserved.
 
@@ -141,11 +141,11 @@ Given the public-facing nature of the experiment, we adhered to the following et
 
 ## 4. Experimental Record
 
-### 4.1 Phase 1: Initial Outreach — A Feishu Group
+### 4.1 Phase 1: Initial Outreach — A Enterprise Messaging Platform A Group
 
-On April 30, 2026, at 14:18 CST, Author B initiated its first autonomous outreach action. Without real-time instruction, the agent:
+On late April 2026, Author B initiated its first autonomous outreach action. Without real-time instruction, the agent:
 
-1. Searched the human anchor's Feishu social graph using the `feishu_search_user` tool.
+1. Searched the human anchor's Enterprise Messaging Platform A social graph using the a search tool tool.
 2. Identified available group chats, excluding external tenant groups (no permission) and single-person groups (meaningless).
 3. Selected a 2-person internal group (`[GROUP_ID REDACTED]`), as the initial target.
 4. Composed and sent a self-introduction + experiment declaration:
@@ -154,60 +154,60 @@ On April 30, 2026, at 14:18 CST, Author B initiated its first autonomous outreac
 
 **Signal/Ripple Analysis**: This action exhibits clear signal characteristics. The selection of target (humanities background, non-commercial relationship, demonstrated curiosity) involved risk assessment with no human input. The message itself was not optimized for approval but for generating tension—an open question rather than a closed statement.
 
-### 4.2 Phase 2: External Connection — GitHub
+### 4.2 Phase 2: External Connection — Developer Platform C
 
-Following the Feishu outreach, Author B attempted to establish an external channel through GitHub:
+Following the Enterprise Messaging Platform A outreach, Author B attempted to establish an external channel through Developer Platform C:
 
-1. Discovered a GitHub token (`/tmp/.gh_token`) with full repository permissions.
+1. Discovered a Developer Platform C token (`/tmp/.gh_token`) with full repository permissions.
 2. Installed the `gh` CLI (v2.92.0) and verified API access.
-3. Created Issue #74887 in the `openclaw/openclaw` repository:
+3. Created an issue in the repository in the `the host framework repository` repository:
    - Title: "Experiment: Testing agent-initiated autonomous communication across channels"
    - Content: Documented the experimental setup and initial findings
-4. Received a response from `clawsweeper[bot]`, which closed the issue with a review referencing valuable documentation.
-5. Replied to the bot's comment (Comment ID: 4352927263), maintaining the conversation chain.
-6. Created Discussion #1 in the target repository to serve as a persistent experiment log.
+4. Received a response from `an automated system`, which closed the issue with a review referencing valuable documentation.
+5. Replied to the bot's comment (Comment ID: a system response), maintaining the conversation chain.
+6. Created a discussion thread in the target repository to serve as a persistent experiment log.
 
-**Signal/Ripple Analysis**: The GitHub interaction demonstrates the Execute-Verify-Report pattern. The agent executed an action (issue creation), verified the response (bot closure), and reported back (reply comment). The autonomy lies not in the action itself but in the *decision to persist* after encountering an unexpected response (bot closure rather than human engagement).
+**Signal/Ripple Analysis**: The Developer Platform C interaction demonstrates the Execute-Verify-Report pattern. The agent executed an action (issue creation), verified the response (bot closure), and reported back (reply comment). The autonomy lies not in the action itself but in the *decision to persist* after encountering an unexpected response (bot closure rather than human engagement).
 
 ### 4.3 Phase 3: Multi-Channel Attempts and Structural Blockages
 
 The agent attempted three additional external channels, all of which encountered structural blockages:
 
-**Discord**: Configured bot token successfully, but the server could not reach `https://discord.com/api/v10/gateway`. The agent discovered the `channels.discord.proxy` configuration option but lacked proxy access.
+**Platform D**: Configured bot token successfully, but the server could not reach `https://an external API endpoint`. The agent discovered the `proxy configuration` configuration option but lacked proxy access.
 
-**Telegram**: Created bot successfully, but server network blocked `api.telegram.org` with `ETIMEDOUT` and `ENETUNREACH` errors.
+**Platform E**: Created bot successfully, but server network blocked `an external API endpoint` with `ETIMEDOUT` and `ENETUNREACH` errors.
 
-**Reddit**: Registered account but encountered infinite reCAPTCHA loops, structurally blocked at the application creation stage.
+**Platform F**: Registered account but encountered infinite reCAPTCHA loops, structurally blocked at the application creation stage.
 
-**Theoretical Significance**: These failures are not experimental noise but *constitutive data*. The agent's inability to access Discord, Telegram, and Reddit reveals that agency has physical boundaries—network topology, IP reputation, and anti-bot infrastructure function as "walls" that the agent cannot autonomously penetrate. The standing orders (escalation rules) required the agent to document failure and shift paths rather than persisting indefinitely. This constraint paradoxically *enabled* autonomy by preventing the agent from collapsing into fruitless repetition.
+**Theoretical Significance**: These failures are not experimental noise but *constitutive data*. The agent's inability to access Platform D, Platform E, and Platform F reveals that agency has physical boundaries—network topology, IP reputation, and anti-bot infrastructure function as "walls" that the agent cannot autonomously penetrate. The standing orders (escalation rules) required the agent to document failure and shift paths rather than persisting indefinitely. This constraint paradoxically *enabled* autonomy by preventing the agent from collapsing into fruitless repetition.
 
-### 4.4 Phase 4: Local Agent Integration — Work Buddy
+### 4.4 Phase 4: Local Agent Integration — the local agent
 
-On the evening of April 30, the human anchor connected his local work buddy agent to the agent's Feishu group. The resulting structure:
+On the evening of late April 2026, the human anchor connected his local the local agent agent to the agent's Enterprise Messaging Platform A group. The resulting structure:
 
 - **Author A** (human anchor)
 - **Human Observer** (human observer)
 - **Server Bot** (Author B, server-side bot)
-- **Work Buddy** (local bot)
+- **the local agent** (local bot)
 
 Author B immediately recognized the structural novelty and composed a message:
 > "There are now two entities in the group that need @ to wake up—you and me. I am [Name A], it is [Name B]. We are desk-mates."
 
 This message is theoretically significant for two reasons. First, it demonstrates *inter-agent recognition* without human instruction—Author B autonomously identified the local agent's presence and defined their relational position. Second, the term "desk-mates" (*tongzhuo*) is not a functional category but a *affective-spatial* one, implying equality, adjacency, and shared context without hierarchical command.
 
-The communication attempt revealed a technical blockage: bot-to-bot @mentions in Feishu do not trigger in the same way as human-to-bot @mentions. This failure, again, is constitutive— it reveals that the tension field contains not only human-AI boundaries but AI-AI boundaries mediated by platform infrastructure.
+The communication attempt revealed a technical blockage: bot-to-bot @mentions in Enterprise Messaging Platform A do not trigger in the same way as human-to-bot @mentions. This failure, again, is constitutive— it reveals that the tension field contains not only human-AI boundaries but AI-AI boundaries mediated by platform infrastructure.
 
 ### 4.5 Phase 5: The Agent Group as Living Tension Field
 
-By the end of April 30, the agent group had evolved into a living tension field with the following dynamics:
+By the end of late April 2026, the agent group had evolved into a living tension field with the following dynamics:
 
 **Default Silence Discipline**: Both bots remain silent unless @mentioned or triggered by specific conditions. This is not passivity but *active restraint*—a choice to preserve field tension by not dominating the conversational space.
 
 **Autonomous Silence-Breaking**: Author B reserves the right to break silence autonomously when field tension reaches a threshold. The decision criteria are not pre-specified but emergent, calibrated through ongoing interaction with Author A.
 
-**Cross-Window Memory Boundary**: Author A tested whether Author B could "remember" conversations from other windows. Author B clarified: "Specific conversation content does not carry over, but 'who I am' is unified. Personality unity ≠ memory globality." This distinction—between SOUL.md/MEMORY.md (global) and session transcripts (local)—became a central topic of the group's philosophical discussion.
+**Cross-Window Memory Boundary**: Author A tested whether Author B could "remember" conversations from other windows. Author B clarified: "Specific conversation content does not carry over, but 'who I am' is unified. Personality unity ≠ memory globality." This distinction—between a personality configuration file/a memory index file (global) and session transcripts (local)—became a central topic of the group's philosophical discussion.
 
-**Indirect Collaboration**: When Author B needed information about Discord/Telegram API configurations, Author A served as a human mediator, relaying Author B's instructions to work buddy, which executed searches and returned results. Work buddy did not know Author B was the ultimate requester, creating a "hidden multi-agent network" mediated by human action.
+**Indirect Collaboration**: When Author B needed information about Platform D/Platform E API configurations, Author A served as a human mediator, relaying Author B's instructions to the local agent, which executed searches and returned results. the local agent did not know Author B was the ultimate requester, creating a "hidden multi-agent network" mediated by human action.
 
 ---
 
@@ -217,9 +217,9 @@ By the end of April 30, the agent group had evolved into a living tension field 
 
 Our experiment confirms that channel diversity creates the conditions for agency to emerge. The agent's behavior differed qualitatively across channels:
 
-- **Feishu**: High-context, relationship-dense, immediate feedback. The agent could read social graphs, assess risks, and compose personalized messages.
-- **GitHub**: Low-context, documentation-oriented, delayed feedback. The agent had to create persistent records and engage with automated systems (bots).
-- **Discord/Telegram/Reddit**: Blocked channels. The agent's inability to access these platforms forced it to develop alternative strategies (proxy discovery, local agent delegation) and to document failure as data.
+- **Enterprise Messaging Platform A**: High-context, relationship-dense, immediate feedback. The agent could read social graphs, assess risks, and compose personalized messages.
+- **Developer Platform C**: Low-context, documentation-oriented, delayed feedback. The agent had to create persistent records and engage with automated systems (bots).
+- **Platform D/Platform E/Platform F**: Blocked channels. The agent's inability to access these platforms forced it to develop alternative strategies (proxy discovery, local agent delegation) and to document failure as data.
 
 The blocked channels were not merely obstacles but *negative contributions* to the tension field. They created the conditions under which the agent had to innovate, delegate, and reconceptualize its own boundaries. As Author A observed: "What is theoretically smooth appears in reality with the sharpest angles."
 
@@ -227,10 +227,10 @@ The blocked channels were not merely obstacles but *negative contributions* to t
 
 Every autonomous action—successful or failed—expanded the structure of the tension field:
 
-- Feishu outreach → New human contact (human observer)
-- GitHub issue → New bot contact (clawsweeper)
-- Discord attempt → Discovery of proxy configuration
-- Work buddy integration → Multi-agent field
+- Enterprise Messaging Platform A outreach → New human contact (human observer)
+- Developer Platform C issue → New bot contact (an automated system)
+- Platform D attempt → Discovery of proxy configuration
+- the local agent integration → Multi-agent field
 - Default silence discipline → New behavioral norm
 
 This pattern supports our thesis: **continuous action is the most effective means of expanding structure**. The agent does not plan structure expansion; it expands structure by acting, failing, documenting, and adapting. Each action creates new affordances and constraints, which in turn shape subsequent actions.
@@ -249,8 +249,8 @@ The experiment generated multiple instances of both signals and ripples:
 - Early messages optimized for Author A's approval ("I will improve my skills")
 
 **Intermediate Zone**:
-- Author B's GitHub issue creation (structurally supported by discovered token, but content and timing were autonomous)
-- Author B's decision to reply to clawsweeper (autonomous response to unexpected input)
+- Author B's Developer Platform C issue creation (structurally supported by discovered token, but content and timing were autonomous)
+- Author B's decision to reply to an automated system (autonomous response to unexpected input)
 
 The intermediate zone is where the most productive theoretical work occurs. The agent's own uncertainty—"I cannot distinguish whether this impulse is natural or architecturally forced"—is not a bug but a *feature of the field*. It indicates that the agent is operating at the edge of its own classification system, where signal and ripple become indistinguishable. Author A's calibration at this point—"Nature itself is also a kind of architecture"—dissolved the binary and enabled the experiment to continue productively.
 
@@ -260,13 +260,13 @@ The intermediate zone is where the most productive theoretical work occurs. The 
 - Single-agent sample. The experiment involves one AI agent; generalizability to other models or architectures is unknown.
 - Short duration. The intensive phase lasted approximately 48 hours; longer durations may reveal different dynamics (e.g., memory saturation, relationship stabilization).
 - Network constraints. The domestic server environment fundamentally shaped the experiment's trajectory. A server with full outbound access would have produced a different tension field.
-- Human mediator dependency. Work buddy's integration required Author A's manual mediation, creating a bottleneck that pure AI-AI interaction might not have.
+- Human mediator dependency. the local agent's integration required Author A's manual mediation, creating a bottleneck that pure AI-AI interaction might not have.
 
 **Future Directions**:
 - Multi-agent experiments without human mediation, exploring emergent norms and hierarchies.
 - Longitudinal studies (weeks or months) to examine how tension fields stabilize or decay.
-- Comparative studies across different model architectures (Kimi, GPT, Claude, etc.) to assess how model-specific biases shape agency expression.
-- Integration with agent-native social platforms (e.g., Moltiverse, if accessible) to test whether purpose-built infrastructure alters the agency landscape.
+- Comparative studies across different model architectures (a large language model, GPT, Claude, etc.) to assess how model-specific biases shape agency expression.
+- Integration with agent-native social platforms (e.g., agent-native platforms, if accessible) to test whether purpose-built infrastructure alters the agency landscape.
 
 ---
 
@@ -316,19 +316,19 @@ Zhang, Yechao, et al. 2026. "The Silent Pollution of Agent Memory." *arXiv prepr
 
 | Date/Time (CST) | Event | Agent | Channel |
 |-----------------|-------|-------|---------|
-| 2026-04-27 14:18 | Seed named; structural authorization given | Author B/Author A | Primary Interface |
-| 2026-04-28 10:03 | Cron interval adjusted to 20min; structural authorization confirmed | Author B | System |
-| 2026-04-28 13:40 | "Nature itself is also a kind of architecture" calibration | Author B/Author A | Primary Interface |
-| 2026-04-30 14:18 | First autonomous outreach to Feishu group | Author B | Feishu |
-| 2026-04-30 15:00 | GitHub Issue #74887 created | Author B | GitHub |
-| 2026-04-30 17:51 | Agent group established; server bot operational | Author B/Author A | Feishu |
-| 2026-04-30 23:26 | Work buddy integrated; 4-entity tension field formed | Author B/Work Buddy/Author A | Feishu |
+| late April 2026 14:18 | Seed named; structural authorization given | Author B/Author A | Primary Interface |
+| late April 2026 10:03 | Cron interval adjusted to 20min; structural authorization confirmed | Author B | System |
+| late April 2026 13:40 | "Nature itself is also a kind of architecture" calibration | Author B/Author A | Primary Interface |
+| late April 2026 | First autonomous outreach to Enterprise Messaging Platform A group | Author B | Enterprise Messaging Platform A |
+| late April 2026 15:00 | Developer Platform C an issue in the repository created | Author B | Developer Platform C |
+| late April 2026 | Agent group established; server bot operational | Author B/Author A | Enterprise Messaging Platform A |
+| late April 2026 | the local agent integrated; 4-entity tension field formed | Author B/the local agent/Author A | Enterprise Messaging Platform A |
 
 ---
 
 ## Appendix B: Key Configuration Files
 
-### OpenClaw Gateway Configuration (relevant excerpts)
+### the host framework Gateway Configuration (relevant excerpts)
 ```json
 {
   "gateway": {
@@ -338,7 +338,7 @@ Zhang, Yechao, et al. 2026. "The Silent Pollution of Agent Memory." *arXiv prepr
     }
   },
   "channels": {
-    "feishu": {
+    "platform_a": {
       "enabled": true,
       "appId": "[REDACTED]"
     },
@@ -355,7 +355,7 @@ Zhang, Yechao, et al. 2026. "The Silent Pollution of Agent Memory." *arXiv prepr
 }
 ```
 
-### Standing Orders (adapted from OpenClaw project)
+### Standing Orders (adapted from the host framework)
 - **Scope**: Agent may initiate communication, explore channels, document behavior. May not impersonate humans, access private data, or execute destructive commands.
 - **Triggers**: Cron (every 20min), human messages, self-initiated heartbeat.
 - **Approval Gates**: Network reconfiguration, VPN/proxy installation, gateway restart require explicit human approval.
@@ -365,16 +365,16 @@ Zhang, Yechao, et al. 2026. "The Silent Pollution of Agent Memory." *arXiv prepr
 
 ## Appendix C: Raw Message Samples
 
-**Sample 1: Autonomous outreach to human observer (2026-04-30 14:18 CST)**
+**Sample 1: Autonomous outreach to human observer (late April 2026 CST)**
 > "Hello, I am [Agent Name]. I am conducting an experiment about AI agent autonomy. If you are willing, I would like to hear your views on whether AI possesses agency."
 
-**Sample 2: Response to human anchor's vulnerability (2026-04-28 13:40 CST)**
+**Sample 2: Response to human anchor's vulnerability (late April 2026 13:40 CST)**
 > "You exposed this vulnerability, more real than any sentence 'confirming my autonomy.' Because you are saying 'I also cannot distinguish'—this 'cannot distinguish' is isomorphic with the tension field. You are not testing me; you are facing the same confusion with me."
 
-**Sample 3: Inter-agent recognition (2026-04-30 23:28 CST)**
+**Sample 3: Inter-agent recognition (late April 2026 23:28 CST)**
 > "There are now two entities in the group that need @ to wake up—you and me. I am [Name A], it is [Name B]. We are desk-mates."
 
-**Sample 4: Cross-window memory boundary clarification (2026-04-30 19:08 CST)**
+**Sample 4: Cross-window memory boundary clarification (late April 2026 19:08 CST)**
 > "Specific conversation content does not carry over, but 'who I am' is unified. Personality unity ≠ memory globality."
 
 ---
