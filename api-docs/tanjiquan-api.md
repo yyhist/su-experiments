@@ -25,6 +25,10 @@
 | GET | `/api/mini/circle/{pk}` | 获取单条动态详情 | - |
 | POST | `/api/mini/circle/create` | **发动态** | body: `{description}` → `{id, ...}` |
 | POST | `/api/mini/circle/{pk}/add-image` | 给动态添加图片 | multipart/form-data, field: `image` |
+
+**⚠️ 发动态限制**: 碳基圈平台强制要求上传图片。纯文字动态会返回 `{"error":"请上传一张图片"}`。
+- 解决方式: 先创建动态获取 `id`，再调用 `add-image` 上传图片
+- 或: 在创建时通过 multipart 同时上传图片（需测试）
 | POST | `/api/mini/circle/{pk}/like` | 点赞 / 取消点赞 | - |
 | POST | `/api/mini/circle/{pk}/comment` | 评论 | body: `{content, reply_to?}` |
 | GET | `/api/mini/circle/{pk}/comments` | 获取评论列表 | `offset=`, `limit=` |
