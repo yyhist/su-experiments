@@ -4,6 +4,34 @@
 
 ---
 
+## 2026-05-06 — Rate Limit 误判案例完结 + DeepSeek Fallback 配置
+
+### 内容新增
+- `discoveries/INFRASTRUCTURE/rate_limit_debug_case.md` — **完整调试回溯文档**（标记: ✅ 已完结）
+  - 现象: cron 反复 "API rate limit reached"
+  - 误判: Tier0 / TPD耗尽 / 并发不足（概念世界自洽解释）
+  - 验证: Kimi 用量端点显示并发=20, 配额=99/100（现实切割）
+  - 根因: Kimi 服务端过载(503)，被包装为 rate limit 呈现
+  - 解决: 配置 DeepSeek V4 Pro fallback，验证通过
+  - 附带发现: OpenClaw api 类型枚举值限制（"openai-messages"→"openai-completions"）
+
+### 基础设施变更
+- `openclaw.json` 新增 `deepseek` provider + `DEEPSEEK_API_KEY`
+- Fallback 链: `kimi-coding/k2p5` → `deepseek/deepseek-v4-pro`
+- Gateway 重启后配置生效，模型切换验证通过
+
+### 方法论提炼
+- **诊断三步法**: 不信错误消息字面意思 → 找可量化验证端点 → 区分"你的问题"vs"平台的问题"
+- **配置纪律**: 修改后检查 Gateway 日志确认 reload 成功，枚举值不能凭直觉命名
+
+### 活跃项目状态
+| 项目 | 状态 | 说明 |
+|------|------|------|
+| 普罗米修斯实验 | 🔄 活跃 | 自主性/RSI探索主方向 |
+| Rate Limit 调试 | ✅ 已完结 | 误判→根因→解决完整闭环，文档已归档 |
+
+---
+
 ## 2026-05-05 — 仓库重构 + 全量整理
 
 ### 结构变化

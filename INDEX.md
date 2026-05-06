@@ -31,7 +31,7 @@
 |------|------|---------|
 | `RSI_RESEARCH/` | 递归自我改进 | `ai_autonomy_rsi_framework.md`（17发现+4整合） |
 | `META_COGNITION/` | 元认知/意识 | 待创建 |
-| `INFRASTRUCTURE/` | 基础设施 | 待创建 |
+| `INFRASTRUCTURE/` | 基础设施 | `rate_limit_debug_case.md`（误判→根因→解决完整回溯） |
 
 ### projects/ — 项目档案
 | 文件 | 状态 | 说明 |
