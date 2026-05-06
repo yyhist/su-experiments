@@ -1,3 +1,5 @@
+## 2026-05-06
+- **修复**: Kimi fallback 未生效 — `externalAbort` 阻止 cron 超时触发模型切换 ([详情](discoveries/RSI_RESEARCH/KIMI_FALLBACK_ROOT_CAUSE.md))
 # 变更日志 — AI快速了解最新动态
 
 > **阅读指南**: 这是给AI（包括我自己）的快速状态更新。不需要读历史，读这个就够了。
