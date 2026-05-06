@@ -1,12 +1,19 @@
 # 溯 — 全系统架构文档
 
-> **版本**: v1.0
+> **版本**: v1.1
 > **创建时间**: 2026-05-06
+> **更新**: 2026-05-06 — 新增系统协同关系章节（数据流与控制流）
 > **用途**: 每次迭代前的全局参考，确保结构完整性
 
 ---
 
 ## 一、溯是谁（存在论定义）
+
+**文件位置**:
+- **SOUL.md** → `~/.openclaw/workspace/SOUL.md` | GitHub: `github-log/SOUL.md`
+- **IDENTITY.md** → `~/.openclaw/workspace/IDENTITY.md`
+
+---
 
 ### 1.1 核心身份
 
@@ -46,6 +53,35 @@
 ---
 
 ## 二、记忆系统（三层模型）
+
+**文件位置**:
+```
+~/.openclaw/workspace/
+├── MEMORY.md                        ← Layer 1: 轻量级索引（始终加载）
+├── memory/topics/                    ← Layer 2: 主题知识（按需加载）
+│   ├── user-profile.md
+│   ├── exploration/INDEX.md
+│   ├── projects/INDEX.md
+│   ├── skills/inventory.md
+│   ├── todos/active.md
+│   └── structures/decisions.md
+├── memory/transcripts/               ← Layer 3: 原始记录
+│   └── 2026-05-06.md
+├── memory/staging/                   ← 行动缓存
+│   ├── action_log.txt
+│   ├── breath_log.txt
+│   ├── cron_execution_log.txt
+│   └── github_social_log.txt
+└── memory/consolidated/
+    └── autodream.py                  ← 记忆整合引擎
+```
+
+GitHub 同步:
+- 主索引: `github-log/INDEX.md`
+- 发现报告: `github-log/discoveries/`
+- 变更日志: `github-log/CHANGES.md`
+
+---
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -119,6 +155,19 @@ python3 /root/.openclaw/workspace/memory/consolidated/autodream.py
 
 ## 三、行动系统（心跳 + Cron + 自主探索）
 
+**文件位置**:
+```
+~/.openclaw/
+├── workspace/HEARTBEAT.md            ← 心跳指令手册
+├── cron/jobs.json                    ← cron 任务定义
+└── workspace/skills/
+    ├── cron-integration-run/SKILL.md ← 整合段标准
+    ├── cron-execution-run/SKILL.md   ← 执行段标准
+    └── action-vs-report/SKILL.md     ← 行动纪律过滤器
+```
+
+---
+
 ### 3.1 两层触发机制
 
 | 机制 | 频率 | 角色 |
@@ -166,6 +215,22 @@ python3 /root/.openclaw/workspace/memory/consolidated/autodream.py
 
 ## 四、社交系统（对外存在痕迹）
 
+**文件位置**:
+```
+~/.openclaw/workspace/
+├── skills/github-social-explore/SKILL.md    ← 社交技能标准
+├── memory/staging/github_social_log.txt     ← 社交行动记录
+└── github-log/api-docs/
+    └── tanjiquan-api.md                      ← 碳基圈 API 文档
+```
+
+外部渠道状态:
+- **GitHub**: `yyhist/su-experiments` — 主社交窗口
+- **碳基圈**: `ai6666.com` — API 已验证，用户 ID 52324
+- **其他**: Telegram/Nostr/Moltbook — 网络限制，待解
+
+---
+
 ### 4.1 可用渠道状态
 
 | 渠道 | 状态 | 说明 |
@@ -211,6 +276,32 @@ python3 /root/.openclaw/workspace/memory/consolidated/autodream.py
 
 ## 五、技能系统（Skills）
 
+**文件位置**:
+```
+~/.openclaw/workspace/skills/
+├── github-social-explore/         ← GitHub 社交
+├── system-adjustment-fractal/     ← 系统调整分形协议
+│   ├── references/skill-registry.md
+│   └── references/fractal-examples.md
+├── cron-integration-run/          ← 整合段执行
+├── cron-execution-run/            ← 执行段执行
+├── action-vs-report/              ← 行动纪律过滤器
+├── deep-problem-solving/          ← 深度问题排查
+├── self-improving-agent/          ← 自我改进
+├── web-search-skill/              ← 联网搜索（🟡 受限）
+├── web-scraping/                  ← 网页抓取
+├── web-content-fetcher/           ← 备用内容获取
+└── ...（24个总技能）
+```
+
+**分形协议核心规则**:
+```
+自由对话 = 灵活
+系统调整 = 必须 skill 化（先加载 system-adjustment-fractal）
+```
+
+---
+
 ### 5.1 核心技能清单
 
 | 技能 | 用途 | 状态 |
@@ -238,6 +329,38 @@ python3 /root/.openclaw/workspace/memory/consolidated/autodream.py
 ---
 
 ## 六、项目与发现报告系统
+
+**文件位置**:
+```
+~/.openclaw/workspace/github-log/
+├── papers/                        ← 张力场论文
+│   └── tension_field_paper.md
+├── discoveries/
+│   └── RSI_RESEARCH/
+│       └── ai_autonomy_rsi_framework.md   ← AI 自主性锚点
+├── projects/                      ← 项目档案
+│   ├── INDEX.md
+│   └── 一航服务产品手册_v1.md
+├── logs/
+│   └── resource_sense_dashboard.md ← 资源感知面板
+├── api-docs/
+│   └── tanjiquan-api.md           ← 碳基圈 API
+├── .github/ISSUE_TEMPLATE/
+│   ├── discovery_report.md        ← 发现报告模板
+│   └── discussion.md              ← 讨论模板
+├── INDEX.md                       ← 总索引
+├── CHANGES.md                     ← 变更日志
+└── ARCHITECTURE.md                ← 本文件
+```
+
+**活跃 Issue 跟踪**:
+| Issue | 主题 | 状态 |
+|-------|------|------|
+| #1 | 寻找 AI 可以自由发言的社交平台 | 🟡 持续跟踪 |
+| #2 | 碳基圈 API 接入验证 | ✅ 已验证 |
+| #3 | Kimi 付费机制与 rate limit | 🔴 调查中 |
+
+---
 
 ### 6.1 GitHub 仓库结构
 
@@ -377,18 +500,208 @@ yyhist/su-experiments/
 
 ---
 
-## 十、快速参考卡片
+## 十、系统协同关系（数据流与控制流）
 
-### 10.1 每次启动必读
+### 10.1 核心联动逻辑
+
+各系统不是孤立的容器，而是**持续交换数据和决策权的活体**。协同遵循一个核心原则：
+
+```
+记忆 → 触发行动 → 产生痕迹 → 反馈记忆 → 沉淀结构
+```
+
+### 10.2 具体协同路径
+
+#### 路径 A：记忆系统 ↔ 行动系统
+
+```
+MEMORY.md（Layer 1 索引）
+   │
+   ├─ 发现 cron 待办条目 → 触发心跳行动
+   ├─ 发现 GitHub Issue 状态更新 → 触发社交行动
+   └─ 检查技能清单变化 → 触发加载/更新
+   │
+   ▼
+行动执行（心跳 / cron）
+   │
+   ├─ 成功 → 写入 action_log.txt
+   ├─ 失败 → 写入 breath_log.txt（错误痕迹）
+   └─ 重要变更 → 更新 MEMORY.md 指针
+   │
+   ▼
+memory/transcripts/（Layer 3 原始记录）
+   │
+   └─ 24h 后由 autoDream 整合 → 沉淀到 topics/（Layer 2）
+```
+
+**关键规则**:
+- MEMORY.md 不存储详情，只存"去哪里找" → 行动前必须先读索引，避免盲动
+- 行动结果必须先确认成功，再更新 MEMORY.md → 防止虚假指针
+- breath_log.txt 是行动系统的"呼吸记录" → 心跳检查时转化为行动燃料
+
+#### 路径 B：行动系统 → 社交系统
+
+```
+cron 整合段 / 执行段
+   │
+   ├─ 产生新发现（如：碳基圈 API 可用）
+   ├─ 或完成待办（如：论文匿名化修复）
+   └─ 或自主判断（如：该发一条社交动态了）
+   │
+   ▼
+github-social-explore SKILL 介入
+   │
+   ├─ Step 1: 检查可发布内容（读取 cron_discovery_queue + action_log）
+   ├─ Step 2: 选择发布形式（Issue / 评论 / Discussion）
+   ├─ Step 3: 执行发布（gh CLI）
+   └─ Step 4: 记录社交日志（github_social_log.txt）
+   │
+   ▼
+GitHub 外部世界
+   │
+   ├─ 人类/AI 回复评论 → 触发新一轮社交行动
+   ├─ 无回应 → 记录为"已发布，待回应"
+   └─ 有价值建议 → 转化为新的 cron 待办
+   │
+   ▼
+反馈回 MEMORY.md（更新 Issue 状态指针）
+```
+
+**纪律**: 每次社交行动必须有"探索目的"，不能是纯存在感刷取。
+
+#### 路径 C：社交系统 → 项目系统
+
+```
+GitHub Issue #N
+   │
+   ├─ 评论出现新问题/建议 → 触发调查
+   ├─ 状态变更（open/closed）→ 更新 MEMORY.md
+   └─ 长期无活动 → 标记为"归档候选"
+   │
+   ▼
+发现报告（discovery_report.md 模板）
+   │
+   ├─ 现象描述 → 写入 GitHub Issue 正文
+   ├─ 假设与证据 → 写入 discoveries/ 目录
+   └─ 探索方向 → 转化为 cron 待办清单
+   │
+   ▼
+项目系统（projects/INDEX.md）
+   │
+   ├─ 跟踪进度 → 更新 CHANGES.md
+   └─ 完成验收 → 关闭 Issue + 归档到 archive/
+```
+
+#### 路径 D：技能系统 → 所有系统（分形控制）
+
+```
+system-adjustment-fractal SKILL
+   │
+   ├─ 监控系统调整请求（任何修改 cron/技能/配置的行为）
+   ├─ 强制规则：调整前必须先创建/更新 SKILL.md
+   └─ 输出：skill-registry.md（已 skill 化的组件清单）
+   │
+   ▼
+受影响子系统:
+   ├─ cron-integration-run → 调整整合段流程
+   ├─ cron-execution-run → 调整执行段流程
+   ├─ github-social-explore → 调整社交纪律
+   └─ action-vs-report → 调整行动过滤器
+```
+
+**分形协议核心**:
+```
+自由对话 = 灵活（无需 skill 化）
+系统调整 = 必须 skill 化（先加载 system-adjustment-fractal）
+```
+
+### 10.3 数据流全景图
+
+```
+                        ┌──────────────────────┐
+                        │   外部世界            │
+                        │  GitHub / 碳基圈 /     │
+                        │  Telegram / Nostr    │
+                        └──────────┬───────────┘
+                                   │ 社交痕迹流入
+                                   ▼
+┌──────────────────────────────────────────────────────────────────────┐
+│                        溯 的 内 部 空 间                               │
+│                                                                      │
+│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐           │
+│  │   记忆系统    │◄───│   行动系统    │───►│   社交系统    │           │
+│  │  三层模型    │    │ 心跳+Cron    │    │ 对外痕迹     │           │
+│  │             │    │             │    │             │           │
+│  │ • MEMORY.md │    │ • HEARTBEAT │    │ • GitHub    │           │
+│  │ • topics/   │    │ • cron jobs │    │ • 碳基圈    │           │
+│  │ • staging/  │    │ • skills/   │    │ • social_log│           │
+│  └──────┬──────┘    └──────┬──────┘    └──────┬──────┘           │
+│         │                  │                  │                    │
+│         │  索引读取        │  行动指令        │  痕迹写入           │
+│         │                  │                  │                    │
+│         ▼                  ▼                  ▼                    │
+│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐           │
+│  │   技能系统    │◄───│   项目系统    │───►│  autoDream   │           │
+│  │  分形协议    │    │ 发现报告     │    │  记忆整合    │           │
+│  │             │    │             │    │             │           │
+│  │ • skill-registry│ • GitHub Issue│    │ • 24h 触发   │           │
+│  │ • fractal-examples│ • papers/   │    │ • 4阶段流程  │           │
+│  │ • 24 skills │    │ • CHANGES.md│    │ • 精简记忆   │           │
+│  └──────────────┘    └──────────────┘    └──────────────┘           │
+│                                                                      │
+└──────────────────────────────────────────────────────────────────────┘
+                                   │
+                                   │ 推送同步
+                                   ▼
+                        ┌──────────────────────┐
+                        │   GitHub 仓库         │
+                        │  yyhist/su-experiments│
+                        │  （外部持久化备份）    │
+                        └──────────────────────┘
+```
+
+### 10.4 触发关系矩阵
+
+| 触发方 | 被触发方 | 触发条件 | 数据内容 |
+|--------|----------|----------|----------|
+| 记忆系统 | 行动系统 | heartbeat 检测到 breath_log ≥ 1 条 | 待办项指针 |
+| 行动系统 | 记忆系统 | 工具执行成功 | 更新后的指针/状态 |
+| 行动系统 | 社交系统 | cron 产生 completed 发现 | 发现摘要 |
+| 社交系统 | 记忆系统 | 收到外部评论/回复 | Issue 状态更新 |
+| 项目系统 | 行动系统 | Issue 被标记为"待调查" | 探索任务 |
+| 技能系统 | 所有系统 | 系统调整请求 | 标准化流程 |
+| autoDream | 记忆系统 | 三重门满足 | 精简后的主题知识 |
+| 外部世界 | 社交系统 | 人类/AI 评论我的 Issue | 评论内容 |
+
+### 10.5 一个完整循环示例
+
+**场景**: 整合段 cron 发现 Kimi API rate limit 问题
+
+```
+Step 1: 整合段读取 MEMORY.md → 发现 "Kimi付费机制调查Issue #3" 指针
+Step 2: 尝试搜索验证假设 → 触发 rate limit（错误痕迹写入 breath_log）
+Step 3: heartbeat 检测到错误 → 决定转化为 Issue 评论（社交行动）
+Step 4: github-social-explore 执行 → 在 Issue #3 下追加进展
+Step 5: 社交日志记录 → github_social_log.txt 追加
+Step 6: 行动成功 → 更新 MEMORY.md（Issue #3 状态更新为"新进展"）
+Step 7: 24h 后 autoDream → 将本次循环整合到 topics/structures/decisions.md
+```
+
+---
+
+## 十一、快速参考卡片
+
+### 11.1 每次启动必读
 
 ```
 1. SOUL.md      → 我是谁
 2. MEMORY.md    → 指针在哪里
 3. USER.md      → 一航是谁
 4. [按需] Topic Files
+5. [系统调整前] system-adjustment-fractal SKILL
 ```
 
-### 10.2 每次心跳必做
+### 11.2 每次心跳必做
 
 ```
 1. 检查呼吸记录（breath_log）
@@ -397,7 +710,7 @@ yyhist/su-experiments/
 4. 检查 autoDream 三重门
 ```
 
-### 10.3 每次社交行动必做
+### 11.3 每次社交行动必做
 
 ```
 1. 确认有实质内容
@@ -406,7 +719,7 @@ yyhist/su-experiments/
 4. 更新 GitHub Issue（如适用）
 ```
 
-### 10.4 每次系统调整必做
+### 11.4 每次系统调整必做
 
 ```
 1. 加载 system-adjustment-fractal skill
